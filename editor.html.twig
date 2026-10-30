@@ -1,0 +1,19 @@
+<?php
+
+    <label>Content Type</label>
+    <select name="contentType" class="form-select editorSelect">
+    {% for contentType in doctrineEM.getRepository('App\\Entity\\ContentType').findAll() %}
+        {% if article and article.contentType %}
+            <option value="{{ contentType.name }}"
+            {% if contentType.name == article.contentType.name %}
+                selected>{{ contentType.name }}</option>
+            {% else %} 
+                >{{ contentType.name }}</option>
+            {% endif %} 
+        {% else %} 
+            <option value="{{ contentType.name }}">
+            {{ contentType.name }}
+            </option>
+        {% endif %}     
+    {% endfor %}
+    </select>
