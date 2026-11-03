@@ -6,7 +6,8 @@ Piece of code to enable the current section input to be displayed first, as save
 
 ### MarkdownRenderer.php
 Page updated to be able to render tables according to League/CommonMark doc. It does work.
-Can be downloaded via
+
+League\CommonMark can be downloaded via:
 ```bash
 composer require league/commonmark
 ``` 
