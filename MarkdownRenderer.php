@@ -1,8 +1,8 @@
 <?php
 namespace App\Service;
 
-// OLD CONVERTER 
-use League\CommonMark\CommonMarkConverter;
+// ----- FORMER CONVERTER -----------
+// use League\CommonMark\CommonMarkConverter;
 
 use League\CommonMark\Environment\Environment;
 use League\CommonMark\Extension\CommonMark\CommonMarkCoreExtension;
@@ -40,7 +40,7 @@ class MarkdownRenderer {
         // Instantiate the converter engine and start converting some Markdown!
         $this->converter = new MarkdownConverter($environment);
 
-        /*
+        /* ----- FORMER CODE ---------------
         $this->converter = new CommonMarkConverter([
             'html_input' => 'allow',
             'allow_unsafe_links' => true
@@ -49,7 +49,6 @@ class MarkdownRenderer {
     }
 
     public function render(string $markdown): string {
-        // Change ->getContent() to (string) casting, which works across all versions
         return (string) $this->converter->convert($markdown);
     }
 }
